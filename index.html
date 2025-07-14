@@ -7,5 +7,39 @@
     <link rel="stylesheet" href="./css/style.css" />
     <script defer src="./js/script.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div class="login-container" id="loginContainer">
+      <div class="form-container sign-up-container" id="signUpContainer">
+        <form id="signUpForm">
+          <h2>Create Account</h2>
+          <input type="text" placeholder="Username" required />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container" id="signInContainer">
+        <form id="signInForm">
+          <h2>Sign In</h2>
+          <input type="text" placeholder="Username" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
+      <div class="overlay-container" id="overlayContainer">
+        <div class="overlay" id="overlay">
+          <div class="overlay-panel overlay-left" id="overlayLeft">
+            <h2>Welcome Back!</h2>
+            <p>To keep connected with us, please login with your credentials</p>
+            <button class="ghost" id="switchToSignIn">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right" id="overlayRight">
+            <h2>Hello, Friend!</h2>
+            <p>Enter your details and start journey with us</p>
+            <button class="ghost" id="switchToSignUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
