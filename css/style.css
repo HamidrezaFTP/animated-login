@@ -39,7 +39,7 @@ body {
 }
 
 .sign-up-container {
-  right: 0;
+  left: 0;
   width: 50%;
   opacity: 0;
   z-index: 1;
@@ -142,4 +142,30 @@ body {
 .overlay-text {
   margin: 20px 0;
   line-height: 1.5;
+}
+
+.active .sign-in-container {
+  transform: translateX(100%);
+}
+
+.active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+.active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.active .overlay {
+  transform: translateX(50%);
+}
+
+.active .overlay-left {
+  transform: translateX(0);
+}
+
+.active .overlay-right {
+  transform: translateX(20%);
 }
