@@ -6,11 +6,25 @@
 
 body {
   font-family: sans-serif;
-  background-color: #f6f5f7;
+  background: linear-gradient(-45deg, #2980b9, #6dd5fa, #9b59b6, #f39c12);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .login-container {
@@ -26,6 +40,7 @@ body {
   max-width: 100%;
   min-height: 480px;
   transition: all 0.6s ease-in-out;
+  display: flex;
 }
 
 .form-container {
@@ -33,23 +48,22 @@ body {
   top: 0;
   height: 100%;
   transition: all 0.6s ease-in-out;
+  width: 50%;
 }
 
 .sign-in-container {
   left: 0;
-  width: 50%;
   z-index: 2;
 }
 
 .sign-up-container {
   left: 0;
-  width: 50%;
   opacity: 0;
   z-index: 1;
 }
 
 .auth-form {
-  background: #ffffff;
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,7 +76,7 @@ body {
 .heading {
   font-weight: bold;
   margin: 20px 0;
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 .auth-input {
@@ -73,12 +87,18 @@ body {
   width: 100%;
 }
 
+.auth-input:focus {
+  outline: none;
+  border: 2px solid #2980b9;
+  background-color: #fff;
+}
+
 .common-btn {
   background: #2980b9;
   border: none;
   padding: 12px 45px;
-  color: white;
-  font-size: 14px;
+  color: #fff;
+  font-size: 1rem;
   font-weight: bold;
   letter-spacing: 1px;
   cursor: pointer;
@@ -88,7 +108,7 @@ body {
 
 .common-btn.ghost {
   background: transparent;
-  border: 2px solid white;
+  border: 2px solid #fff;
 }
 
 .common-btn:hover {
@@ -110,7 +130,7 @@ body {
   background: linear-gradient(to right, #2980b9, #6dd5fa);
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
+  color: #fff;
   position: relative;
   left: -100%;
   height: 100%;
@@ -171,4 +191,40 @@ body {
 
 .active .overlay-right {
   transform: translateX(20%);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .login-container {
+    width: 80vw;
+    min-height: unset;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    margin: 20px auto;
+  }
+
+  .form-container,
+  .sign-in-container {
+    position: static;
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    z-index: 2;
+    opacity: 1;
+    transform: none !important;
+  }
+
+  .sign-up-container,
+  .overlay-container {
+    display: none !important;
+  }
+
+  .auth-form {
+    padding: 30px 5vw;
+    min-height: unset;
+    box-shadow: none;
+    border-radius: 0;
+  }
 }

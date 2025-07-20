@@ -14,13 +14,21 @@
           <h2 class="heading">Create Account</h2>
           <input
             type="text"
+            aria-label="Username"
             class="auth-input"
             placeholder="Username"
             required
           />
-          <input type="email" class="auth-input" placeholder="Email" required />
+          <input
+            type="email"
+            aria-label="Email"
+            class="auth-input"
+            placeholder="Email"
+            required
+          />
           <input
             type="password"
+            aria-label="Password"
             class="auth-input"
             placeholder="Password"
             required
@@ -33,12 +41,16 @@
           <h2 class="heading">Sign In</h2>
           <input
             type="text"
+            aria-label="Username"
+            autocomplete="username"
             class="auth-input"
             placeholder="Username"
             required
           />
           <input
             type="password"
+            aria-label="Password"
+            autocomplete="current-password"
             class="auth-input"
             placeholder="Password"
             required
